@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5753CF524C8B751008C2485 /* SimpleCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5753CF424C8B751008C2485 /* SimpleCalcTests.swift */; };
+		D5753CF824C8B8A6008C2485 /* SimpleCalculUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5753CF724C8B8A6008C2485 /* SimpleCalculUITests.swift */; };
+		D5753CFA24C8B8E5008C2485 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5753CF924C8B8E5008C2485 /* Info.plist */; };
+		D5753CFC24C8B8F2008C2485 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5753CFB24C8B8F2008C2485 /* Info.plist */; };
 		D58CE87D24B13DD0003B27DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CE87C24B13DD0003B27DF /* AppDelegate.swift */; };
 		D58CE87F24B13DD0003B27DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CE87E24B13DD0003B27DF /* SceneDelegate.swift */; };
 		D58CE88124B13DD0003B27DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CE88024B13DD0003B27DF /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D5753CF424C8B751008C2485 /* SimpleCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalcTests.swift; sourceTree = "<group>"; };
+		D5753CF724C8B8A6008C2485 /* SimpleCalculUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculUITests.swift; sourceTree = "<group>"; };
+		D5753CF924C8B8E5008C2485 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5753CFB24C8B8F2008C2485 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58CE87924B13DD0003B27DF /* Calculette-version1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculette-version1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58CE87C24B13DD0003B27DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58CE87E24B13DD0003B27DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,10 +45,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D5753CF324C8B6C5008C2485 /* CountOnMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5753CF424C8B751008C2485 /* SimpleCalcTests.swift */,
+				D5753CF924C8B8E5008C2485 /* Info.plist */,
+			);
+			path = CountOnMeTests;
+			sourceTree = "<group>";
+		};
+		D5753CF624C8B83E008C2485 /* CountOnMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5753CF724C8B8A6008C2485 /* SimpleCalculUITests.swift */,
+				D5753CFB24C8B8F2008C2485 /* Info.plist */,
+			);
+			path = CountOnMeUITests;
+			sourceTree = "<group>";
+		};
 		D58CE87024B13DCF003B27DF = {
 			isa = PBXGroup;
 			children = (
 				D58CE87B24B13DD0003B27DF /* Calculette-version1 */,
+				D5753CF324C8B6C5008C2485 /* CountOnMeTests */,
+				D5753CF624C8B83E008C2485 /* CountOnMeUITests */,
 				D58CE87A24B13DD0003B27DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,8 +153,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5753CFA24C8B8E5008C2485 /* Info.plist in Resources */,
 				D58CE88924B13DD2003B27DF /* LaunchScreen.storyboard in Resources */,
 				D58CE88624B13DD2003B27DF /* Assets.xcassets in Resources */,
+				D5753CFC24C8B8F2008C2485 /* Info.plist in Resources */,
 				D58CE88424B13DD0003B27DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5753CF524C8B751008C2485 /* SimpleCalcTests.swift in Sources */,
 				D58CE88124B13DD0003B27DF /* ViewController.swift in Sources */,
 				D58CE87D24B13DD0003B27DF /* AppDelegate.swift in Sources */,
 				D58CE87F24B13DD0003B27DF /* SceneDelegate.swift in Sources */,
+				D5753CF824C8B8A6008C2485 /* SimpleCalculUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
