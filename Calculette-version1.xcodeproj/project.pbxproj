@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5753CF524C8B751008C2485 /* SimpleCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5753CF424C8B751008C2485 /* SimpleCalcTests.swift */; };
-		D5753CF824C8B8A6008C2485 /* SimpleCalculUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5753CF724C8B8A6008C2485 /* SimpleCalculUITests.swift */; };
-		D5753CFA24C8B8E5008C2485 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5753CF924C8B8E5008C2485 /* Info.plist */; };
-		D5753CFC24C8B8F2008C2485 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5753CFB24C8B8F2008C2485 /* Info.plist */; };
+		D5753D0424C8C853008C2485 /* CalculetteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5753D0324C8C853008C2485 /* CalculetteTests.swift */; };
+		D583156C24E1B857002107C3 /* CountOnMeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D583156B24E1B857002107C3 /* CountOnMeCalculator.swift */; };
 		D58CE87D24B13DD0003B27DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CE87C24B13DD0003B27DF /* AppDelegate.swift */; };
 		D58CE87F24B13DD0003B27DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CE87E24B13DD0003B27DF /* SceneDelegate.swift */; };
 		D58CE88124B13DD0003B27DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CE88024B13DD0003B27DF /* ViewController.swift */; };
@@ -19,11 +17,21 @@
 		D58CE88924B13DD2003B27DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58CE88724B13DD2003B27DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D5753D0624C8C853008C2485 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D58CE87124B13DCF003B27DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58CE87824B13DD0003B27DF;
+			remoteInfo = "Calculette-version1";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		D5753CF424C8B751008C2485 /* SimpleCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalcTests.swift; sourceTree = "<group>"; };
-		D5753CF724C8B8A6008C2485 /* SimpleCalculUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculUITests.swift; sourceTree = "<group>"; };
-		D5753CF924C8B8E5008C2485 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5753CFB24C8B8F2008C2485 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5753D0124C8C853008C2485 /* CalculetteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculetteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5753D0324C8C853008C2485 /* CalculetteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculetteTests.swift; sourceTree = "<group>"; };
+		D5753D0524C8C853008C2485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D583156B24E1B857002107C3 /* CountOnMeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOnMeCalculator.swift; sourceTree = "<group>"; };
 		D58CE87924B13DD0003B27DF /* Calculette-version1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculette-version1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58CE87C24B13DD0003B27DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58CE87E24B13DD0003B27DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D5753CFE24C8C853008C2485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58CE87624B13DD0003B27DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,30 +60,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D5753CF324C8B6C5008C2485 /* CountOnMeTests */ = {
+		D5753D0224C8C853008C2485 /* CalculetteTests */ = {
 			isa = PBXGroup;
 			children = (
-				D5753CF424C8B751008C2485 /* SimpleCalcTests.swift */,
-				D5753CF924C8B8E5008C2485 /* Info.plist */,
+				D5753D0324C8C853008C2485 /* CalculetteTests.swift */,
+				D5753D0524C8C853008C2485 /* Info.plist */,
 			);
-			path = CountOnMeTests;
+			path = CalculetteTests;
 			sourceTree = "<group>";
 		};
-		D5753CF624C8B83E008C2485 /* CountOnMeUITests */ = {
+		D583156824E1B7E7002107C3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				D5753CF724C8B8A6008C2485 /* SimpleCalculUITests.swift */,
-				D5753CFB24C8B8F2008C2485 /* Info.plist */,
+				D583156B24E1B857002107C3 /* CountOnMeCalculator.swift */,
 			);
-			path = CountOnMeUITests;
+			path = model;
 			sourceTree = "<group>";
 		};
 		D58CE87024B13DCF003B27DF = {
 			isa = PBXGroup;
 			children = (
+				D583156824E1B7E7002107C3 /* model */,
 				D58CE87B24B13DD0003B27DF /* Calculette-version1 */,
-				D5753CF324C8B6C5008C2485 /* CountOnMeTests */,
-				D5753CF624C8B83E008C2485 /* CountOnMeUITests */,
+				D5753D0224C8C853008C2485 /* CalculetteTests */,
 				D58CE87A24B13DD0003B27DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				D58CE87924B13DD0003B27DF /* Calculette-version1.app */,
+				D5753D0124C8C853008C2485 /* CalculetteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,9 +99,9 @@
 		D58CE87B24B13DD0003B27DF /* Calculette-version1 */ = {
 			isa = PBXGroup;
 			children = (
+				D58CE88024B13DD0003B27DF /* ViewController.swift */,
 				D58CE87C24B13DD0003B27DF /* AppDelegate.swift */,
 				D58CE87E24B13DD0003B27DF /* SceneDelegate.swift */,
-				D58CE88024B13DD0003B27DF /* ViewController.swift */,
 				D58CE88224B13DD0003B27DF /* Main.storyboard */,
 				D58CE88524B13DD2003B27DF /* Assets.xcassets */,
 				D58CE88724B13DD2003B27DF /* LaunchScreen.storyboard */,
@@ -98,6 +113,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D5753D0024C8C853008C2485 /* CalculetteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5753D0824C8C853008C2485 /* Build configuration list for PBXNativeTarget "CalculetteTests" */;
+			buildPhases = (
+				D5753CFD24C8C853008C2485 /* Sources */,
+				D5753CFE24C8C853008C2485 /* Frameworks */,
+				D5753CFF24C8C853008C2485 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5753D0724C8C853008C2485 /* PBXTargetDependency */,
+			);
+			name = CalculetteTests;
+			productName = CalculetteTests;
+			productReference = D5753D0124C8C853008C2485 /* CalculetteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D58CE87824B13DD0003B27DF /* Calculette-version1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58CE88D24B13DD2003B27DF /* Build configuration list for PBXNativeTarget "Calculette-version1" */;
@@ -125,6 +158,10 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = armellelecerf;
 				TargetAttributes = {
+					D5753D0024C8C853008C2485 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D58CE87824B13DD0003B27DF;
+					};
 					D58CE87824B13DD0003B27DF = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -144,19 +181,25 @@
 			projectRoot = "";
 			targets = (
 				D58CE87824B13DD0003B27DF /* Calculette-version1 */,
+				D5753D0024C8C853008C2485 /* CalculetteTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D5753CFF24C8C853008C2485 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58CE87724B13DD0003B27DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5753CFA24C8B8E5008C2485 /* Info.plist in Resources */,
 				D58CE88924B13DD2003B27DF /* LaunchScreen.storyboard in Resources */,
 				D58CE88624B13DD2003B27DF /* Assets.xcassets in Resources */,
-				D5753CFC24C8B8F2008C2485 /* Info.plist in Resources */,
 				D58CE88424B13DD0003B27DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,19 +207,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D5753CFD24C8C853008C2485 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5753D0424C8C853008C2485 /* CalculetteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D58CE87524B13DD0003B27DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5753CF524C8B751008C2485 /* SimpleCalcTests.swift in Sources */,
 				D58CE88124B13DD0003B27DF /* ViewController.swift in Sources */,
 				D58CE87D24B13DD0003B27DF /* AppDelegate.swift in Sources */,
+				D583156C24E1B857002107C3 /* CountOnMeCalculator.swift in Sources */,
 				D58CE87F24B13DD0003B27DF /* SceneDelegate.swift in Sources */,
-				D5753CF824C8B8A6008C2485 /* SimpleCalculUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5753D0724C8C853008C2485 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58CE87824B13DD0003B27DF /* Calculette-version1 */;
+			targetProxy = D5753D0624C8C853008C2485 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D58CE88224B13DD0003B27DF /* Main.storyboard */ = {
@@ -198,6 +256,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D5753D0924C8C853008C2485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalculetteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.armellelecerf.CalculetteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculette-version1.app/Calculette-version1";
+			};
+			name = Debug;
+		};
+		D5753D0A24C8C853008C2485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalculetteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.armellelecerf.CalculetteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculette-version1.app/Calculette-version1";
+			};
+			name = Release;
+		};
 		D58CE88B24B13DD2003B27DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,6 +445,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D5753D0824C8C853008C2485 /* Build configuration list for PBXNativeTarget "CalculetteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5753D0924C8C853008C2485 /* Debug */,
+				D5753D0A24C8C853008C2485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D58CE87424B13DCF003B27DF /* Build configuration list for PBXProject "Calculette-version1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
