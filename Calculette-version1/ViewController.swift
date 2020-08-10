@@ -20,7 +20,7 @@ class ViewController: UIViewController {
    
     // Error check computed variables
     var expressionIsCorrect: Bool {
-        return elements.last != "+" && elements.last != "-"
+        return elements.last != "+" && elements.last != "-" && elements.last != "*" && elements.last != "/"
     }
     
     var expressionHaveEnoughElement: Bool {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     var canAddOperator: Bool {
-        return elements.last != "+" && elements.last != "-"
+        return elements.last != "+" && elements.last != "-" && elements.last != "*" && elements.last != "/"
     }
     
     var expressionHaveResult: Bool {
@@ -74,6 +74,25 @@ class ViewController: UIViewController {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
+    @IBAction func tappedMultiplicationButton(_ sender: UIButton) {
+           if canAddOperator {
+               textView.text.append(" x ")
+           } else {
+               let alertVC = UIAlertController(title: "Zéro!", message: "Un operateur est déja mis !", preferredStyle: .alert)
+               alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+               self.present(alertVC, animated: true, completion: nil)
+           }
+       }
+    
+    @IBAction func tappedDivisionButton(_ sender: UIButton) {
+           if canAddOperator {
+               textView.text.append(" / ")
+           } else {
+               let alertVC = UIAlertController(title: "Zéro!", message: "Un operateur est déja mis !", preferredStyle: .alert)
+               alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+               self.present(alertVC, animated: true, completion: nil)
+           }
+       }
 
     @IBAction func tappedEqualButton(_ sender: UIButton) {
         guard expressionIsCorrect else {
@@ -101,6 +120,8 @@ class ViewController: UIViewController {
             switch operand {
             case "+": result = left + right
             case "-": result = left - right
+            case "x": result = left * right
+            case "/": result = left / right
             default: fatalError("Unknown operator !")
             }
             
