@@ -174,6 +174,9 @@
                                                         <state key="normal" title="AC">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="resetButtonWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cO-Fo-eFv"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgi-U6-80z">
                                                         <rect key="frame" x="124.5" y="0.0" width="105" height="56.5"/>
