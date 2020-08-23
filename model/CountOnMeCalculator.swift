@@ -116,7 +116,7 @@ class CountOnMeCalculator {
         }
         return prioritiesCalculated
     }
-    //MARK:  functions for testing   A METTRE AILLEURS!!!!!!
+    //MARK:  functions for testing   
     func addANumber(_ number: String) {
         if hasAResult {
             expression = ""

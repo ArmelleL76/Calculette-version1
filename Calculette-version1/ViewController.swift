@@ -99,17 +99,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedEqualButton(_ sender: UIButton) {
+        guard calculator.expressionHasEnoughElement(elements: calculator.elements) else {
+            let alertVC = UIAlertController(title: "Erreur!", message: "Votre expression est incomplète, démarrez un nouveau calcul !", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            return self.present(alertVC, animated: true, completion: nil)
+        }
+        
         guard calculator.expressionIsCorrect(elements: calculator.elements) else {
             let alertVC = UIAlertController(title: "Erreur!", message: "Entrez une expression correcte !", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             return self.present(alertVC, animated: true, completion: nil)
         }
         
-        guard calculator.expressionHasEnoughElement(elements: calculator.elements) else {
-            let alertVC = UIAlertController(title: "Erreur!", message: "Votre expression est incomplète, démarrez un nouveau calcul !", preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            return self.present(alertVC, animated: true, completion: nil)
-        }
+        
         guard calculator.dividingIsPossible(elements: calculator.elements) else {
             let alertVC = UIAlertController(title: "Erreur!", message: "La division par zéro est impossible!!!", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
