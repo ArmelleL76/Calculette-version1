@@ -33,7 +33,15 @@ class CountOnMeCalculator {
     func addOperator(elements: [String]) -> Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x"
     }
-    
+    func addANumber(_ number: String) {
+           if hasAResult {
+               expression = ""
+               hasAResult = false
+           }
+           expression += number
+           print(elements)
+           
+       }
     func expressionHasResult(elements: [String]) -> Bool {
         return elements.contains("=")
     }
@@ -117,15 +125,7 @@ class CountOnMeCalculator {
         return prioritiesCalculated
     }
     //MARK:  functions for testing   
-    func addANumber(_ number: String) {
-        if hasAResult {
-            expression = ""
-            hasAResult = false
-        }
-        expression += number
-        print(elements)
-        
-    }
+   
     
 }
 
