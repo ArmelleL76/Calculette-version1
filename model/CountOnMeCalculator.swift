@@ -124,7 +124,7 @@ class CountOnMeCalculator {
         }
         return prioritiesCalculated
     }
-    //MARK:  functions for testing   
+     
    
     
 }

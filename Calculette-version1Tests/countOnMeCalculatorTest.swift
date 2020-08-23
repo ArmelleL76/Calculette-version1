@@ -38,7 +38,11 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         //then
         XCTAssertEqual(result, true)
     }
-    
+    func testGivenAnExpression_WhenCallingReset_ThenResultIsTrue() {
+        calculator.expression = "5 + 7 - 9 / 2"
+        calculator.reset()
+        XCTAssertTrue(calculator.expression == "")
+    }
     func testGivenAnExpressionWithPlusAndDivide_whenCallingExpressionHasResut_ThenResultIsTrue(){
         calculator.expression = "6 - 18/3 ="
         let result = calculator.expressionHasResult(elements: calculator.elements)
@@ -173,9 +177,14 @@ class CountOnMeCalculatorTestCase: XCTestCase {
     {
         XCTAssertEqual(calculator.equalFunc(elements : ["9", "+", "2", "/", "2"]), "10.0")
     }
-    func testGivenElementsSevenMinusTreeMultipliedByFour_whenTestingEqualFunc_ThenResultShouldBeMinusfive()
+    func testGivenElementsSevenMinusThreeMultipliedByFour_whenTestingEqualFunc_ThenResultShouldBeMinusfive()
     {
         XCTAssertEqual(calculator.equalFunc(elements : ["7", "-", "3", "x", "4"]), "-5.0")
     }
-}
+    func testGivenElementsThousandPlustwoDividedByThree_whenTestingEqualFunc_ThenResultShouldBeThreeHundredThirtyFour()
+        {
+            XCTAssertEqual(calculator.equalFunc(elements : ["0", "+", "1002", "/", "3"]), "334.0")
+        }
+    }
+
 
