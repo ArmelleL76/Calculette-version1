@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     private func showMessage(_ message: String) {
-        let alertVC = UIAlertController(title: "Zéro!", message: message, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Erreur!", message: message, preferredStyle: .alert)
                       alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                       self.present(alertVC, animated: true, completion: nil)
     }
@@ -50,47 +50,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedAdditionButton(_ sender: UIButton) {
-        addOperator("+")
-        
+      addOperator("+")
     }
-    
-    //wrong way
-    //      if calculator.canAddOperator(elements: elements) {
-    //          textView.text.append(" + ")
-    //      } else {
-    //          let alertVC = UIAlertController(title: "Zéro!", message: "Un operateur est déja mis !", preferredStyle: .alert)
-    //          alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-    //          self.present(alertVC, animated: true, completion: nil)
-    //      }
-    
     
     @IBAction func tappedSubstractionButton(_ sender: UIButton) {
-        guard calculator.addOperator("-")
-            
-            else {
-                textView.text.append(" - ")
-                calculator.expression = textView.text
-                
-                return showMessage("Un opérateur est déjà mis")}
-        
+       addOperator("-")
     }
+           
     @IBAction func tappedMultiplicationButton(_ sender: UIButton) {
-        guard calculator.addOperator("x")
-            else {
-                textView.text.append(" x ")
-                calculator.expression = textView.text
-                
-                return showMessage("Un opérateur est déjà mis")}
-        
+       addOperator("x")
     }
     
     @IBAction func tappedDivisionButton(_ sender: UIButton) {
-        guard calculator.addOperator("/") else {
-            textView.text.append(" / ")
-            calculator.expression = textView.text
-            
-            return showMessage("Un opérateur est déjà mis")}
-        
+       addOperator("/")
     }
     
     @IBAction func resetButton(_sender : UIButton){
