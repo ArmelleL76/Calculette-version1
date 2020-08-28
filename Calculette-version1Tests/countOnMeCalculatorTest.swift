@@ -24,8 +24,8 @@ class CountOnMeCalculatorTestCase: XCTestCase {
             // si l'index du chiffre actuel est inferieur au nombre d'éléments dans opes
             if index < opes.count {
                 // alors on ajoute l'opérateur
-                calculator.addOperator(opes[index])
-            }
+               calculator.addOperator(opes[index])
+                          }
         }
     }
     override func setUp() {
@@ -120,35 +120,28 @@ class CountOnMeCalculatorTestCase: XCTestCase {
     }
     func testGivenLastElementOperande_whenTestingAddOperator_ThenResultIsTrue(){
         calculator.expression = "5 + 2  "
-        let result = calculator.addOperator(calculator.expression)
-        XCTAssertTrue(result)
+        calculator.addOperator(calculator.expression)
+        XCTAssertFalse(calculator.expression == "7")
     }
     func testGivenLastElementOperator_whenTestingAddOperator_ThenResultIsFalse(){
         calculator.expression = "4 - 7 / "
-        let result = calculator.addOperator(calculator.expression)
-        XCTAssertFalse(result)
+        calculator.addOperator(calculator.expression)
+        XCTAssertFalse(calculator.expression == "4 - 7 / ")
     }
     
     func testGivenLastElementIsOperator_whenTestingAddOperator_ThenResultIsFalse(){
         calculator.expression = "8 x "
-        let result = calculator.addOperator(calculator.expression)
-        XCTAssertFalse(result)
+        calculator.addOperator(calculator.expression)
+        XCTAssertFalse(calculator.expression == "8 x")
     }
     
     func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsTrue(){
         calculator.expression = "2 + 3 x 4 ="
-        let result = calculator.addOperator(calculator.expression)
-        XCTAssertTrue(result)
+        calculator.addOperator(calculator.expression)
+        XCTAssertFalse(calculator.expression == "12")
     }
     
-    func testGivenElementsWithEqualAndNothingElse_whenTestingExpressionHasResult_ThenResultIsTrue(){
-        calculator.expression = " = "
-        let result = calculator.addOperator(calculator.expression)
-        XCTAssertTrue(result)
-    }
-    
-    
-    
+
     func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsFalse(){
         calculator.expression = "7 - 200 "
         let result = calculator.expressionHasResult(elements: calculator.elements)
@@ -218,6 +211,26 @@ class CountOnMeCalculatorTestCase: XCTestCase {
                 XCTAssertEqual(result, "334.0")
             
         }
+    
+    func  testGivenElemenstFourMinus_WhentestingcanAddOperator_ThenResultShouldBeFalse()
+{
+    calculator.expression = "4 -"
+    let result = calculator.canAddOperator()
+    XCTAssertFalse(result)
+    
+}
+       func  testGivenElemenstElevenDividedBy3_WhentestingcanAddOperator_ThenResultShouldBeTrue()
+      {
+          calculator.expression = "11 / 3 "
+          let result = calculator.canAddOperator()
+          XCTAssertTrue(result)
+          
+      }
+     func  testGivenElemenstFifteenMinusFourDivided_WhentestingcanAddOperator_ThenResultShouldBeFalse()
+    {
+        calculator.expression = "15 - 4 / "
+        let result = calculator.canAddOperator()
+        XCTAssertFalse(result)
+        
     }
-
-
+}

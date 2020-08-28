@@ -42,12 +42,21 @@ class ViewController: UIViewController {
     
     private func addOperator(_ ope: String) {
         //good way
-        guard calculator.addOperator(ope) else {
+        guard calculator.canAddOperator() else {
             return showMessage("Un operateur est déja mis ")
         }
-
+        calculator.addOperator(ope)
         textView.text = calculator.expression
     }
+
+   // private func addOperator(_ ope: String) {
+        //good way
+     //   guard calculator.addOperator(ope) else {
+     //       return showMessage("Un operateur est déja mis ")
+     //   }
+
+     //   textView.text = calculator.expression
+   // }
     
     @IBAction func tappedAdditionButton(_ sender: UIButton) {
       addOperator("+")

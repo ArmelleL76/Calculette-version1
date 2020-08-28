@@ -11,7 +11,6 @@ class CountOnMeCalculator {
     
     //MARK: properties
     var expression = ""
-    var expressionToDisplay : String {return expression}
     var elements : [String]{return expression.split(separator : " ").map{"\($0)"}}
     var hasAResult = false
     
@@ -33,14 +32,17 @@ class CountOnMeCalculator {
     func canAddOperator() -> Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x"
     }
-    
-    func addOperator(_ ope: String) -> Bool {
-        guard canAddOperator() else {
-            return false
-        }
+    func addOperator(_ ope: String) {
         expression.append(" \(ope) ")
-        return true
     }
+    
+   // func addOperator(_ ope: String) -> Bool {
+   //     guard canAddOperator() else {
+   //         return false
+   //     }
+   //     expression.append(" \(ope) ")
+   //     return true
+   // }
     func addANumber(_ number: String) {
            if hasAResult {
                expression = ""
