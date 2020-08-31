@@ -8,58 +8,41 @@
 
 import Foundation
 class CountOnMeCalculator {
-    
-    //MARK: properties
+
+    // MARK: - properties
     var expression = ""
-    var elements : [String]{return expression.split(separator : " ").map{"\($0)"}}
+    var elements: [String] { return expression.split(separator: " ").map {"\($0)"}}
     var hasAResult = false
-    
-    
-    //MARK: function RESET  //display a void screen
-    
+
+    // MARK: - function RESET  //display a void screen
     func reset() {expression = " "}
-    
-    //MARK: other functions
+    // MARK: - other functions
     func expressionIsCorrect(elements: [String]) -> Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x" &&
             elements.first != "+" && elements.last != "-" && elements.first != "/" && elements.first != "x"
     }
-    
     func expressionHasEnoughElement(elements: [String]) -> Bool {
         return elements.count >= 3
     }
-    
     func canAddOperator() -> Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x"
     }
     func addOperator(_ ope: String) {
         expression.append(" \(ope) ")
     }
-    
-   // func addOperator(_ ope: String) -> Bool {
-   //     guard canAddOperator() else {
-   //         return false
-   //     }
-   //     expression.append(" \(ope) ")
-   //     return true
-   // }
     func addANumber(_ number: String) {
-           if hasAResult {
-               expression = ""
-               hasAResult = false
-           }
-           expression += number
-           print(elements)
-           
-       }
+        expression += number
+        print(elements)
+    }
     func expressionHasResult(elements: [String]) -> Bool {
         return elements.contains("=")
     }
-    func dividingIsPossible(elements : [String]) -> Bool{
-        if elements[elements.count-1] == "0" && elements[elements.count-2] == "/"{ return false}
+
+    func dividingIsPossible( elements: [String]) -> Bool {if elements[elements.count-1] == "0"
+        && elements[elements.count-2] == "/" { return false }
         return true
     }
-    //    performes calcul
+    // MARK: - performes calcul
     @objc func equalFunc(elements: [String]) -> String? {
         var operationsToReduce: [String] = elements
         //        if the first index is a subtraction operator than it's a negative number so it
@@ -84,7 +67,7 @@ class CountOnMeCalculator {
         }
         return operationsToReduce.first
     }
-    //    calculate the addition and subtraction
+    // MARK: - calculate the addition and subtraction
     private func calculateAdditionAndSubtraction(operationsToReduce: [String]) -> [String]? {
         var additionAndSubtraction: [String] = operationsToReduce
         guard let left: Double = Double(additionAndSubtraction[0]) else {
@@ -104,7 +87,7 @@ class CountOnMeCalculator {
         additionAndSubtraction.insert("\(result)", at: 0)
         return additionAndSubtraction
     }
-    //    calculate the priorities when the calcul contains a division and\or a multiplication
+    // MARK: - calculate the priorities when the calcul contains a division and\or a multiplication
     private func calculatePriorities(operationsToReduce: [String]) -> [String]? {
         var prioritiesCalculated: [String] = operationsToReduce
         if let index = prioritiesCalculated.firstIndex(where: { $0 == "x" || $0 == "/"}) {
@@ -134,9 +117,4 @@ class CountOnMeCalculator {
         }
         return prioritiesCalculated
     }
-     
-   
-    
 }
-
-

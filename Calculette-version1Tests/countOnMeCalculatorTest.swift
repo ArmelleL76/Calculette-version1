@@ -8,16 +8,14 @@
 
 import XCTest
 
-
-
 @testable import Calculette_version1
 
 class CountOnMeCalculatorTestCase: XCTestCase {
-    
     private var calculator: CountOnMeCalculator!
-    func createExpression(nums: [String], opes: [String]){
+    func createExpression(nums: [String], opes: [String]) {
      calculator.reset()
-        // enumerated nous renvoie l'index et la valeur qui se trouve à cet index dans le tableau sur lequel elle est appelée
+        // enumerated nous renvoie l'index et la valeur qui se trouve à cet index
+        //dans le tableau sur lequel elle est appelée
         for (index, num) in nums.enumerated() {
             // on ajoute le chiffre à l'expression
             calculator.addANumber(num)
@@ -31,8 +29,7 @@ class CountOnMeCalculatorTestCase: XCTestCase {
     override func setUp() {
         super.setUp()
         calculator = CountOnMeCalculator()
-        
-    }
+        }
     
     func testGivenAnExpressionWithoutEqualSign_WhenCallingExpressionHasResult_ThenResultIsFalse() {
         //given
@@ -56,181 +53,186 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         calculator.reset()
         XCTAssertTrue(calculator.expression == " ")
     }
-    func testGivenAnExpressionWithPlusAndDivide_whenCallingExpressionHasResut_ThenResultIsTrue(){
+    func testGivenAnExpressionWithPlusAndDivide_whenCallingExpressionHasResut_ThenResultIsTrue() {
         calculator.expression = "6 - 18/3 ="
         let result = calculator.expressionHasResult(elements: calculator.elements)
         XCTAssertEqual(result, true)
     }
     
-    func testGivenLastElementOperatorPlus_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenLastElementOperatorPlus_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "2 -3 +"
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
     
-    func testGivenLastElementOperatorMinus_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenLastElementOperatorMinus_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "4 + 5 -"
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
     
-    func testGivenLastElementOperatorDivide_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenLastElementOperatorDivide_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "7 - 3 /"
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
     
-    func testGivenLastElementOperatorMultiply_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenLastElementOperatorMultiply_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "9 + 2 x"
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    func testGivenFirstElementOperatorPlus_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenFirstElementOperatorPlus_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "+ 2 - 8 "
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    func testGivenFirstElementOperatorMinus_whenCallingExpressionIsCorrect_ThenResultIsTrue(){
+    func testGivenFirstElementOperatorMinus_whenCallingExpressionIsCorrect_ThenResultIsTrue() {
         calculator.expression = "-4 + 5"
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertTrue(result)
     }
-    
-    func testGivenFirstElementOperatorDivide_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenFirstElementOperatorDivide_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "/ 2 - 3 "
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    
-    func testGivenFirstElementOperatorMultiply_whenCallingExpressionIsCorrect_ThenResultIsFalse(){
+    func testGivenFirstElementOperatorMultiply_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
         calculator.expression = "x 9 + 2 "
         let result = calculator.expressionIsCorrect(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    
-    func testGivenTwoElements_whenTestingExpressionHasEnoughElements_ThenResultIsFalse(){
+    func testGivenTwoElements_whenTestingExpressionHasEnoughElements_ThenResultIsFalse() {
         calculator.expression = "9 +"
         let result = calculator.expressionHasEnoughElement(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    func testGivenTreeElements_whenTestingExpressionHasEnoughElements_ThenResultIsTrue(){
+    func testGivenTreeElements_whenTestingExpressionHasEnoughElements_ThenResultIsTrue() {
         calculator.expression = "5 + 4"
         let result = calculator.expressionHasEnoughElement(elements: calculator.elements)
         XCTAssertTrue(result)
     }
-    func testGivenLastElementOperande_whenTestingAddOperator_ThenResultIsTrue(){
-        calculator.expression = "5 + 2  "
+    func testGivenLastElementOperande_whenTestingAddOperator_ThenResultIsTrue() {
+        createExpression(nums: ["5", "2"], opes: ["+"])
         calculator.addOperator(calculator.expression)
         XCTAssertFalse(calculator.expression == "7")
     }
-    func testGivenLastElementOperator_whenTestingAddOperator_ThenResultIsFalse(){
-        calculator.expression = "4 - 7 / "
+    func testGivenLastElementOperator_whenTestingAddOperator_ThenResultIsFalse() {
+        createExpression(nums: ["4", "7"], opes: ["-", "/"])
         calculator.addOperator(calculator.expression)
         XCTAssertFalse(calculator.expression == "4 - 7 / ")
     }
-    
-    func testGivenLastElementIsOperator_whenTestingAddOperator_ThenResultIsFalse(){
-        calculator.expression = "8 x "
+    func testGivenLastElementIsOperator_whenTestingAddOperator_ThenResultIsFalse() {
+        createExpression(nums: ["8"], opes: ["x"])
         calculator.addOperator(calculator.expression)
         XCTAssertFalse(calculator.expression == "8 x")
     }
-    
-    func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsTrue(){
-        calculator.expression = "2 + 3 x 4 ="
+    func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsTrue() {
+        createExpression(nums: ["2", "3", "4"], opes: ["+", "4"])
         calculator.addOperator(calculator.expression)
         XCTAssertFalse(calculator.expression == "12")
     }
-    
-
-    func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsFalse(){
-        calculator.expression = "7 - 200 "
+    func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsFalse() {
+        createExpression(nums: ["7", "200"], opes: ["-"])
         let result = calculator.expressionHasResult(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    
-    func testGivenLastElementsEqual0_whenTestingdividingIsPossible_ThenResultIsFalse(){
-        calculator.expression = "78 + 4 / 0 "
+    func testGivenLastElementsEqual0_whenTestingdividingIsPossible_ThenResultIsFalse() {
+        createExpression(nums: ["78", "4", "0"], opes: ["+", "/"])
         let result = calculator.dividingIsPossible(elements: calculator.elements)
         XCTAssertFalse(result)
     }
-    
-    func testGivenLastElementsNonEqualZero_whenTestingdividingIsPossible_ThenResultIstrue(){
-        calculator.expression = "213 - 4 / 9 "
+    func testGivenLastElementsNonEqualZero_whenTestingdividingIsPossible_ThenResultIstrue() {
+        createExpression(nums: ["213", "4", "9"], opes: ["-", "/"])
         let result = calculator.dividingIsPossible(elements: calculator.elements)
         XCTAssertTrue(result)
     }
-    func testGivenElementsOnePlusNine_whenTestingEqualFunc_ThenResultShouldBeTen()
-    {
+    func testGivenElementsOnePlusNine_whenTestingEqualFunc_ThenResultShouldBeTen() {
          createExpression(nums: ["1", "9"], opes: ["+"])
                let result = calculator.equalFunc(elements: calculator.elements)
                 XCTAssertEqual(result, "10.0")
     }
-    func testGivenElementsTreeMinusSeven_whenTestingEqualFunc_ThenResultShouldBeMinusFour()
-    {    createExpression(nums: ["3", "7"], opes: ["-"])
+    func testGivenElementsTreeMinusSeven_whenTestingEqualFunc_ThenResultShouldBeMinusFour() {    createExpression(nums: ["3", "7"], opes: ["-"])
         let result = calculator.equalFunc(elements: calculator.elements)
          XCTAssertEqual(result, "-4.0")
     }
-    func testGivenElementsSeventeenDividedByTwo_whenTestingEqualFunc_ThenResultShouldBeEightPointFive()
-    {   createExpression(nums: ["17", "2"], opes: ["/"])
+    func testGivenElementsSeventeenDividedByTwo_whenTestingEqualFunc_ThenResultShouldBeEightPointFive() {   createExpression(nums: ["17", "2"], opes: ["/"])
     let result = calculator.equalFunc(elements: calculator.elements)
      XCTAssertEqual(result, "8.5")
-       
-    }
-    func testGivenElementsNineMutipliedByZero_whenTestingEqualFunc_ThenResultShouldBeZero()
-    {
+       }
+    func testGivenElementsNineMutipliedByZero_whenTestingEqualFunc_ThenResultShouldBeZero() {
         createExpression(nums: ["9", "0"], opes: ["x"])
            let result = calculator.equalFunc(elements: calculator.elements)
             XCTAssertEqual(result, "0.0")
-        
+        }
+    func testGivenElementsTwoMutipliedByThreeDividedByFourPlusSeven_whenTestingEqualFunc_ThenResultShouldBeEightPointFive() {
+    createExpression(nums: ["2", "3", "0", "7"], opes: ["x", "/", "+"])
+         let result = calculator.equalFunc(elements: calculator.elements)
+         XCTAssertEqual(result, nil)
     }
-    func testGivenElementsNineMutipliedByTwoDividedByFive_whenTestingEqualFunc_ThenResultShouldBeTreePointSix()
-    {
+    func testGivenElementsNineMutipliedByTwoDividedByFive_whenTestingEqualFunc_ThenResultShouldBeTreePointSix() {
         createExpression(nums: ["9", "2", "5"], opes: ["x", "/"])
            let result = calculator.equalFunc(elements: calculator.elements)
             XCTAssertEqual(result, "3.6")
-      
-    }
-    func testGivenElementsNinePlusTwoDividedByTwo_whenTestingEqualFunc_ThenResultShouldBeTen()
-    {
+      }
+    func testGivenElementsNinePlusTwoDividedByTwo_whenTestingEqualFunc_ThenResultShouldBeTen() {
         createExpression(nums: ["9", "2", "2"], opes: ["+", "/"])
            let result = calculator.equalFunc(elements: calculator.elements)
             XCTAssertEqual(result, "10.0")
-       
-    }
-    func testGivenElementsSevenMinusThreeMultipliedByFour_whenTestingEqualFunc_ThenResultShouldBeMinusfive()
-    {
+       }
+    func testGivenElementsSevenMinusThreeMultipliedByFour_whenTestingEqualFunc_ThenResultShouldBeMinusfive() {
         createExpression(nums: ["7", "3", "4"], opes: ["-", "x"])
            let result = calculator.equalFunc(elements: calculator.elements)
             XCTAssertEqual(result, "-5.0")
-       
-    }
-    func testGivenElementsThousandPlustwoDividedByThree_whenTestingEqualFunc_ThenResultShouldBeThreeHundredThirtyFour()
-        {
+       }
+    func testGivenElementsThousandPlustwoDividedByThree_whenTestingEqualFunc_ThenResultShouldBeThreeHundredThirtyFour() {
             createExpression(nums: ["0", "1002", "3"], opes: ["+", "/"])
                let result = calculator.equalFunc(elements: calculator.elements)
                 XCTAssertEqual(result, "334.0")
-            
+            }
+    func testGivenElementsThousandMinusHundredMultipliedBytwoDividedbyFive_whenTestingEqualFunc_ThenResultShouldBeThirty() {
+        createExpression(nums: ["1000", "100", "2", "5"], opes: ["-", "x", "/"])
+           let result = calculator.equalFunc(elements: calculator.elements)
+            XCTAssertEqual(result, "960.0")
         }
-    
-    func  testGivenElemenstFourMinus_WhentestingcanAddOperator_ThenResultShouldBeFalse()
-{
-    calculator.expression = "4 -"
+    func testGivenElementsThousandMinusThousand_whenTestingEqualFunc_ThenResultShouldBeZero() {
+        createExpression(nums: ["1000", "1000"], opes: ["-"])
+           let result = calculator.equalFunc(elements: calculator.elements)
+            XCTAssertEqual(result, "0.0")
+        }
+    func testGivenElementsThousandDividedByHundredMinusTen_whenTestingEqualFunc_ThenResultShouldBeZero() {
+           createExpression(nums: ["1000", "100", "10"], opes: ["/", "-"])
+              let result = calculator.equalFunc(elements: calculator.elements)
+               XCTAssertEqual(result, "0.0")
+           }
+    func  testGivenElemenstFourTwo_WhentestingAddANumber_ThenResultShouldBeFortyTwo() {
+        calculator.addANumber("4")
+        calculator.addANumber("2")
+        let result = calculator.expression
+        XCTAssertEqual(result, "42")
+    }
+    func  testGivenElemenstTwoDivided_WhentestingAddANumber_ThenResultShouldBeFalse() {
+            calculator.addANumber("4")
+            calculator.addANumber("0")
+            let result = calculator.expression
+            XCTAssertEqual( result, "40")
+        }
+    func  testGivenElemenstFourMinus_WhentestingcanAddOperator_ThenResultShouldBeFalse() {
+    createExpression(nums: ["4"], opes: ["-"])
     let result = calculator.canAddOperator()
     XCTAssertFalse(result)
-    
-}
-       func  testGivenElemenstElevenDividedBy3_WhentestingcanAddOperator_ThenResultShouldBeTrue()
-      {
-          calculator.expression = "11 / 3 "
+    }
+    func  testGivenElemenstElevenDividedBy3_WhentestingcanAddOperator_ThenResultShouldBeTrue() {
+          createExpression(nums: ["11", "3"], opes: ["/"])
           let result = calculator.canAddOperator()
           XCTAssertTrue(result)
-          
-      }
-     func  testGivenElemenstFifteenMinusFourDivided_WhentestingcanAddOperator_ThenResultShouldBeFalse()
-    {
-        calculator.expression = "15 - 4 / "
+          }
+     func  testGivenElemenstFifteenMinusFourDivided_WhentestingcanAddOperator_ThenResultShouldBeFalse() {
+        createExpression(nums: ["15", "4"], opes: ["-", "/"])
         let result = calculator.canAddOperator()
         XCTAssertFalse(result)
-        
+        }
+    func test() {
+        //
     }
 }
