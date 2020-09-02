@@ -35,11 +35,20 @@ class ViewController: UIViewController {
     
     private func addOperator(_ ope: String) {
         //good way
-        guard calculator.canAddOperator() else {
+        do {
+            try calculator.addOperator(ope)
+            textView.text = calculator.expression
+        } catch CountOnMeCalculator.Error.cantAddOperator {
             return showMessage("Un operateur est déja mis ")
+        } catch {
+            // do nothing
         }
-        calculator.addOperator(ope)
-        textView.text = calculator.expression
+        
+//        guard calculator.canAddOperator() else {
+//            return showMessage("Un operateur est déja mis ")
+//        }
+//        calculator.addOperator(ope)
+//        textView.text = calculator.expression
     }
     
     @IBAction func tappedAdditionButton(_ sender: UIButton) {

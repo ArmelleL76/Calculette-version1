@@ -7,8 +7,13 @@
 //
 
 import Foundation
-class CountOnMeCalculator {
 
+
+class CountOnMeCalculator {
+    
+    enum Error: Swift.Error {
+        case cantAddOperator
+    }
     // MARK: - properties
     var expression = ""
     var elements: [String] { return expression.split(separator: " ").map {"\($0)"}}
@@ -28,6 +33,10 @@ class CountOnMeCalculator {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x"
     }
     func addOperator(_ ope: String) {
+//    func addOperator(_ ope: String) throws {
+//        guard canAddOperator() else {
+//            throw Error.cantAddOperator
+//        }
         expression.append(" \(ope) ")
     }
     func addANumber(_ number: String) {
