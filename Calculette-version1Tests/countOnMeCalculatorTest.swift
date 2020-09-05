@@ -254,9 +254,13 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         XCTAssertFalse(result)
         }
     
-    func testToto() {
-        calculator.reset()
-        calculator.expression = "99 / A"
-        XCTAssertNil(calculator.equalFunc(elements: ["99", "/", "A"]))
+    func testGivenElementsOperatorMinusFive_whenTestingEqualFunc_ThenResultShouldBeMinusFive() {
+
+        calculator.addOperator("-")
+        calculator.addANumber("5")
+        
+        let result = calculator.equalFunc(elements: calculator.elements)
+
+        XCTAssertEqual("-5", result)
     }
 }

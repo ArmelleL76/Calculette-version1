@@ -15,13 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="XcS-zg-z1c">
-                                <rect key="frame" x="10" y="54" width="394" height="384"/>
-                                <color key="backgroundColor" red="0.2517012656" green="0.53209912780000002" blue="0.58824604749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" red="0.9999235272" green="1" blue="0.99988287689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhb-CV-ett">
                                 <rect key="frame" x="10" y="458" width="394" height="384"/>
                                 <subviews>
@@ -272,6 +265,13 @@
                                     <constraint firstItem="qnw-Km-3lN" firstAttribute="leading" secondItem="jhb-CV-ett" secondAttribute="leading" constant="20" id="Yyv-gu-Nl2"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="XcS-zg-z1c">
+                                <rect key="frame" x="10" y="54" width="394" height="384"/>
+                                <color key="backgroundColor" red="0.2517012656" green="0.53209912780000002" blue="0.58824604749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.9999235272" green="1" blue="0.99988287689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.87426632640000002" green="0.84721285099999999" blue="0.83921468259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>

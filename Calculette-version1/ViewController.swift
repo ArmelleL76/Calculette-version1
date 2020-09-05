@@ -9,46 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // MARK: - Outlets
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
+    
+    // MARK: - Properties
+    
     let calculator = CountOnMeCalculator()
-    // View Life cycles
+    
+    // MARK: - ViewLifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-    // View actions
-    @IBAction func tappedNumberButton(_ sender: UIButton) {
-        guard let numberText = sender.title(for: .normal) else {
-            return
-        }
-        calculator.addANumber(numberText)
-        textView.text = calculator.expression
-    }
+    
+    // MARK: - Methods
     
     private func showMessage(_ message: String) {
         let alertVC = UIAlertController(title: "Erreur!", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alertVC, animated: true, completion: nil)
+        present(alertVC, animated: true)
     }
     
     private func addOperator(_ ope: String) {
-        //good way
-        do {
-            try calculator.addOperator(ope)
-            textView.text = calculator.expression
-        } catch CountOnMeCalculator.Error.cantAddOperator {
+        guard calculator.canAddOperator() else {
             return showMessage("Un operateur est déja mis ")
-        } catch {
-            // do nothing
         }
-        
-//        guard calculator.canAddOperator() else {
-//            return showMessage("Un operateur est déja mis ")
-//        }
-//        calculator.addOperator(ope)
-//        textView.text = calculator.expression
+        calculator.addOperator(ope)
+        textView.text = calculator.expression
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func tappedNumberButton(_ sender: UIButton) {
+        guard let numberText = sender.title(for: .normal) else { return }
+        calculator.addANumber(numberText)
+        textView.text = calculator.expression
     }
     
     @IBAction func tappedAdditionButton(_ sender: UIButton) {
