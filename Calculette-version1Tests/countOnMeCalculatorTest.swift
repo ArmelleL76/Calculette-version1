@@ -153,7 +153,8 @@ class CountOnMeCalculatorTestCase: XCTestCase {
                let result = calculator.equalFunc(elements: calculator.elements)
                 XCTAssertEqual(result, "10.0")
     }
-    func testGivenElementsTreeMinusSeven_whenTestingEqualFunc_ThenResultShouldBeMinusFour() {    createExpression(nums: ["3", "7"], opes: ["-"])
+    func testGivenElementsTreeMinusSeven_whenTestingEqualFunc_ThenResultShouldBeMinusFour() {
+        createExpression(nums: ["3", "7"], opes: ["-"])
         let result = calculator.equalFunc(elements: calculator.elements)
          XCTAssertEqual(result, "-4.0")
     }
