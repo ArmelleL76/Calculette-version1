@@ -111,7 +111,6 @@ class CountOnMeCalculator {
         switch operand {
         case "x": result = left * right
         case "/":
-            // A corriger
             if right == 0 {
                 return nil
             } else {
