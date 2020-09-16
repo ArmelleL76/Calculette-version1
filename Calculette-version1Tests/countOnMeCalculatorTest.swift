@@ -31,16 +31,16 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         calculator = CountOnMeCalculator()
         }
     
-    func testGivenAnExpressionWithoutEqualSign_WhenCallingExpressionHasResult_ThenResultIsFalse() {
+    func testGivenAnExpressionWithEqualSign_WhenCallingExpressionHasResult_ThenResultIsTrue() {
         //given
-        createExpression(nums: ["4", "5"], opes: ["+"])
+        createExpression(nums: ["4", "5"], opes: ["+", "="])
         //when
         let result = calculator.expressionHasResult(elements: calculator.elements)
         //then
-        XCTAssertEqual(result, false)
+        XCTAssertEqual(result, true)
     }
     
-    func testGivenAnExpressionWithEqualSign_WhenCallingExpressionHasResult_ThenResultIsTrue() {
+    func testGivenAnExpressionWithoutEqualSign_WhenCallingExpressionHasResult_ThenResultIsFalse() {
         //given
         createExpression(nums: ["7", "5"], opes: ["-"])
         //when
@@ -53,7 +53,7 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         calculator.reset()
         XCTAssertTrue(calculator.expression == " ")
     }
-    func testGivenAnExpressionWithPlusAndDivide_whenCallingExpressionHasResut_ThenResultIsTrue() {
+    func testGivenAnExpressionWithPlusAndDivide_whenCallingExpressionHasResult_ThenResultIsTrue() {
         createExpression(nums: ["6", "18", "3"], opes: ["-", "/", "="])
         let result = calculator.expressionHasResult(elements: calculator.elements)
         XCTAssertEqual(result, true)

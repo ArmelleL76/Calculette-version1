@@ -15,10 +15,18 @@
 		D58CE88424B13DD0003B27DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58CE88224B13DD0003B27DF /* Main.storyboard */; };
 		D58CE88624B13DD2003B27DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58CE88524B13DD2003B27DF /* Assets.xcassets */; };
 		D58CE88924B13DD2003B27DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58CE88724B13DD2003B27DF /* LaunchScreen.storyboard */; };
+		D5DFF1A625111F2500DA01F7 /* Calculette_version1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DFF1A525111F2500DA01F7 /* Calculette_version1UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		D5582B4C24F06377001EFAE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D58CE87124B13DCF003B27DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58CE87824B13DD0003B27DF;
+			remoteInfo = "Calculette-version1";
+		};
+		D5DFF1A825111F2500DA01F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D58CE87124B13DCF003B27DF /* Project object */;
 			proxyType = 1;
@@ -40,6 +48,9 @@
 		D58CE88524B13DD2003B27DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D58CE88824B13DD2003B27DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D58CE88A24B13DD2003B27DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5DFF1A325111F2500DA01F7 /* Calculette-version1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Calculette-version1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5DFF1A525111F2500DA01F7 /* Calculette_version1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculette_version1UITests.swift; sourceTree = "<group>"; };
+		D5DFF1A725111F2500DA01F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D58CE87624B13DD0003B27DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DFF1A025111F2500DA01F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,6 +101,7 @@
 				D583156824E1B7E7002107C3 /* model */,
 				D58CE87B24B13DD0003B27DF /* Calculette-version1 */,
 				D5582B4824F06377001EFAE2 /* Calculette-version1Tests */,
+				D5DFF1A425111F2500DA01F7 /* Calculette-version1UITests */,
 				D58CE87A24B13DD0003B27DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +111,7 @@
 			children = (
 				D58CE87924B13DD0003B27DF /* Calculette-version1.app */,
 				D5582B4724F06377001EFAE2 /* Calculette-version1Tests.xctest */,
+				D5DFF1A325111F2500DA01F7 /* Calculette-version1UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +128,15 @@
 				D58CE88A24B13DD2003B27DF /* Info.plist */,
 			);
 			path = "Calculette-version1";
+			sourceTree = "<group>";
+		};
+		D5DFF1A425111F2500DA01F7 /* Calculette-version1UITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5DFF1A525111F2500DA01F7 /* Calculette_version1UITests.swift */,
+				D5DFF1A725111F2500DA01F7 /* Info.plist */,
+			);
+			path = "Calculette-version1UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +177,24 @@
 			productReference = D58CE87924B13DD0003B27DF /* Calculette-version1.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D5DFF1A225111F2500DA01F7 /* Calculette-version1UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5DFF1AA25111F2500DA01F7 /* Build configuration list for PBXNativeTarget "Calculette-version1UITests" */;
+			buildPhases = (
+				D5DFF19F25111F2500DA01F7 /* Sources */,
+				D5DFF1A025111F2500DA01F7 /* Frameworks */,
+				D5DFF1A125111F2500DA01F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5DFF1A925111F2500DA01F7 /* PBXTargetDependency */,
+			);
+			name = "Calculette-version1UITests";
+			productName = "Calculette-version1UITests";
+			productReference = D5DFF1A325111F2500DA01F7 /* Calculette-version1UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,6 +211,10 @@
 					};
 					D58CE87824B13DD0003B27DF = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					D5DFF1A225111F2500DA01F7 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = D58CE87824B13DD0003B27DF;
 					};
 				};
 			};
@@ -182,6 +233,7 @@
 			targets = (
 				D58CE87824B13DD0003B27DF /* Calculette-version1 */,
 				D5582B4624F06377001EFAE2 /* Calculette-version1Tests */,
+				D5DFF1A225111F2500DA01F7 /* Calculette-version1UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +253,13 @@
 				D58CE88924B13DD2003B27DF /* LaunchScreen.storyboard in Resources */,
 				D58CE88624B13DD2003B27DF /* Assets.xcassets in Resources */,
 				D58CE88424B13DD0003B27DF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DFF1A125111F2500DA01F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +285,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5DFF19F25111F2500DA01F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DFF1A625111F2500DA01F7 /* Calculette_version1UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -233,6 +300,11 @@
 			isa = PBXTargetDependency;
 			target = D58CE87824B13DD0003B27DF /* Calculette-version1 */;
 			targetProxy = D5582B4C24F06377001EFAE2 /* PBXContainerItemProxy */;
+		};
+		D5DFF1A925111F2500DA01F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58CE87824B13DD0003B27DF /* Calculette-version1 */;
+			targetProxy = D5DFF1A825111F2500DA01F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -448,6 +520,44 @@
 			};
 			name = Release;
 		};
+		D5DFF1AB25111F2500DA01F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Calculette-version1UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armellelecerf.Calculette-version1UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Calculette-version1";
+			};
+			name = Debug;
+		};
+		D5DFF1AC25111F2500DA01F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Calculette-version1UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armellelecerf.Calculette-version1UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Calculette-version1";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,6 +584,15 @@
 			buildConfigurations = (
 				D58CE88E24B13DD2003B27DF /* Debug */,
 				D58CE88F24B13DD2003B27DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5DFF1AA25111F2500DA01F7 /* Build configuration list for PBXNativeTarget "Calculette-version1UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5DFF1AB25111F2500DA01F7 /* Debug */,
+				D5DFF1AC25111F2500DA01F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
