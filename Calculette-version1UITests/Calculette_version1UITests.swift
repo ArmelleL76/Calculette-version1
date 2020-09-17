@@ -27,7 +27,13 @@ class Calculette_version1UITests: XCTestCase {
         XCTAssertEqual(app.textViews["textView"].value as! String, "0")
     }
     
-    
+    func testButton4() {
+        // When
+        app.buttons["4"].tap()
+        
+        // Then
+        XCTAssertEqual(app.textViews["textView"].value as! String, "4")
+    }
 
     func testButton6() {
         // When
