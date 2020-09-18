@@ -37,16 +37,16 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         //when
         let result = calculator.expressionHasResult(elements: calculator.elements)
         //then
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result, "9")
     }
     
     func testGivenAnExpressionWithoutEqualSign_WhenCallingExpressionHasResult_ThenResultIsFalse() {
         //given
-        createExpression(nums: ["7", "5"], opes: ["-"])
+        createExpression(nums: ["7", "5"], opes: ["-", "="])
         //when
         let result = calculator.expressionHasResult(elements: calculator.elements)
         //then
-        XCTAssertEqual(result, false)
+        XCTAssertTrue(result, "2")
     }
     func testGivenAnExpression_WhenCallingReset_ThenResultIsTrue() {
         createExpression(nums: ["5","7", "9", "2"], opes: ["+", "-", "/"])
@@ -56,7 +56,7 @@ class CountOnMeCalculatorTestCase: XCTestCase {
     func testGivenAnExpressionWithPlusAndDivide_whenCallingExpressionHasResult_ThenResultIsTrue() {
         createExpression(nums: ["6", "18", "3"], opes: ["-", "/", "="])
         let result = calculator.expressionHasResult(elements: calculator.elements)
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result, "-4")
     }
     
     func testGivenLastElementOperatorPlus_whenCallingExpressionIsCorrect_ThenResultIsFalse() {
