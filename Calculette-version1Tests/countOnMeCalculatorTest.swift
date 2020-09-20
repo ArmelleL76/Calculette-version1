@@ -114,7 +114,7 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         XCTAssertTrue(result)
     }
     func testGivenLastElementOperande_whenTestingAddOperator_ThenResultIsTrue() {
-        createExpression(nums: ["5", "2"], opes: ["+"])
+        createExpression(nums: ["5", "2"], opes: ["+", "-"])
         calculator.addOperator(calculator.expression)
         XCTAssertFalse(calculator.expression == "7")
     }
