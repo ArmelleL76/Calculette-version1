@@ -116,7 +116,7 @@ class CountOnMeCalculatorTestCase: XCTestCase {
     func testGivenLastElementOperande_whenTestingAddOperator_ThenResultIsTrue() {
         createExpression(nums: ["5", "2"], opes: ["+", "-"])
         calculator.addOperator(calculator.expression)
-        XCTAssertFalse(calculator.expression == "7")
+        XCTAssertFalse(calculator.expression == "5 + 2 -")
     }
     func testGivenLastElementOperator_whenTestingAddOperator_ThenResultIsFalse() {
         createExpression(nums: ["4", "7"], opes: ["-", "/"])
@@ -134,9 +134,9 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         XCTAssertFalse(calculator.expression == "12")
     }
     func testGivenElementsWithEqual_whenTestingExpressionHasResult_ThenResultIsFalse() {
-        createExpression(nums: ["7", "200"], opes: ["-"])
+        createExpression(nums: ["7", "200"], opes: ["-", "="])
         let result = calculator.expressionHasResult(elements: calculator.elements)
-        XCTAssertFalse(result)
+        XCTAssertTrue(result)
     }
     func testGivenLastElementsEqual0_whenTestingdividingIsPossible_ThenResultIsFalse() {
         createExpression(nums: ["78", "4", "0"], opes: ["+", "/"])
@@ -213,7 +213,7 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         XCTAssertEqual(result, nil)
     }
     func testGivenElementsHundredMinusPlus_whenTestingEqualFunc_ThenResultShouldBeNil() {
-    createExpression(nums: ["0", "5"], opes: ["-", "+"])
+    createExpression(nums: ["0", "5", "0"], opes: ["-", "+"])
        let result = calculator.equalFunc(elements: calculator.elements)
         XCTAssertEqual(result, "-5.0")
     }
@@ -234,10 +234,10 @@ class CountOnMeCalculatorTestCase: XCTestCase {
         XCTAssertEqual(result, "42")
     }
     func  testGivenElemenstTwoDivided_WhentestingAddANumber_ThenResultShouldBeFalse() {
-            calculator.addANumber("4")
-            calculator.addANumber("0")
+            calculator.addANumber("7")
+            calculator.addANumber("9")
             let result = calculator.expression
-            XCTAssertEqual( result, "40")
+            XCTAssertEqual( result, "79")
         }
     func  testGivenElemenstFourMinus_WhentestingcanAddOperator_ThenResultShouldBeFalse() {
     createExpression(nums: ["4"], opes: ["-"])
